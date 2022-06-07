@@ -1,2 +1,2 @@
 # wraithcode
-my porfolio site
+welcome to my porfolio site
