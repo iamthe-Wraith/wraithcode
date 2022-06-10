@@ -1,11 +1,13 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 export const PrimaryFont = css`
-  font-family: Montserrat;  
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: .05em;
 `;
 
 export const SecondaryFont = css`
-  font-family: Karla;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
 `;
 
 export const GlobalStyles = createGlobalStyle`
@@ -22,14 +24,9 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    color: ${({ theme }) => theme.colors.gray2};
+    color: ${({ theme }) => theme.colors.gray9};
     line-height: 1.3em;
     box-sizing: border-box;
-
-    &:focus-visible {
-      outline: 1px dashed ${({ theme }) => theme.colors.gray2};
-      outline-offset: 1px;
-    }
   }
 
   p {
@@ -94,7 +91,7 @@ export const TruncateText = css`
 
 export const FocusVisible = css`
   &:focus-visible {
-    outline: ${({ theme }) => `1px dashed ${theme.colors.gray2}`};
+    outline: ${({ theme }) => `1px dashed ${theme.colors.gray9}`};
     outline-offset: 1px;
   }
 `;
