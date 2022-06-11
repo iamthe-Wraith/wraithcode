@@ -1296,7 +1296,11 @@ var ComingSoon = function ComingSoon(_ref) {
       className = _ref$className === void 0 ? '' : _ref$className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles__WEBPACK_IMPORTED_MODULE_2__.ComingSoonContainer, {
     className: className
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_components_headers__WEBPACK_IMPORTED_MODULE_1__.H1, null, "wraithcode coming soon..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "please check back later."));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    className: "be-there-soon",
+    src: "https://s3.us-east-1.wasabisys.com/wraithcode/be-there-soon.png",
+    alt: "bitmoji driving cartoon car with the words Be There Soon displayed over him"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_components_headers__WEBPACK_IMPORTED_MODULE_1__.H1, null, "wraithcode coming soon..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "please check back later."));
 };
 _c = ComingSoon;
 
@@ -1342,7 +1346,7 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 var ComingSoonContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "styles__ComingSoonContainer",
   componentId: "sc-519ive-0"
-})(["", " *{text-align:center;}h1{margin-bottom:1rem;}"], _styles_styles__WEBPACK_IMPORTED_MODULE_0__.AbsoluteCenter);
+})(["", " *{text-align:center;}.be-there-soon{display:block;width:90vw;max-width:250px;margin:0 auto 50px;}h1{margin-bottom:1rem;}"], _styles_styles__WEBPACK_IMPORTED_MODULE_0__.AbsoluteCenter);
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
