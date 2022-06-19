@@ -3,7 +3,8 @@ import { PrimaryFont } from '../styles';
 
 const _Base = css`
   ${ PrimaryFont }
-  color: ${({theme}) => theme.colors.gray9};
+  color: ${({theme}) => theme.colors.primary};
+  text-align: center;
 `;
 
 export const _H1 = css`
