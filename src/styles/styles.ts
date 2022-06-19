@@ -12,7 +12,7 @@ export const SecondaryFont = css`
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background: ${({theme}) => theme.colors.gray1};
+    background-color: ${({theme}) => theme.colors.gray1};
 
     &.no-scroll {
       overflow: hidden;
@@ -23,7 +23,6 @@ export const GlobalStyles = createGlobalStyle`
     ${SecondaryFont}
     margin: 0;
     padding: 0;
-    font-size: 1rem;
     color: ${({ theme }) => theme.colors.gray9};
     line-height: 1.3em;
     box-sizing: border-box;
@@ -31,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     margin-bottom: 1rem;
-    line-height: 23px;
+    line-height: 1.5rem;
   }
 
   ul {
