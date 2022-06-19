@@ -74,6 +74,7 @@
         "react/react-in-jsx-scope": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "off",
+        "react/require-default-props": "off",
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
             "warn",
@@ -92,6 +93,11 @@
         },
         "rules": {
           "@typescript-eslint/no-unsafe-call": "off",
+          "@typescript-eslint/naming-convention": {
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "leadingUnderscore": ["allowSingleOrDouble"],
+            "trailingUnderscore": ["allowSingleOrDouble"]
+          }
         }
       }
     ]
