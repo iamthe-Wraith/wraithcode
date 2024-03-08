@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Welcome to Wraithcode</h1>
+<p>Things are in the works...come back soon to see what we are able to accomplish!</p>
