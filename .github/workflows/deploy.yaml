@@ -21,4 +21,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: docker compose up -d
+    - run: docker compose up -d --build --force-recreate --no-deps
