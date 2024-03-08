@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  init:
     runs-on: self-hosted
 
     strategy:
@@ -21,4 +21,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: echo 'wraithcode-runner working...' >> test.txt
+    - run: docker compose up -d
