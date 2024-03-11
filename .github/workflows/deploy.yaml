@@ -21,4 +21,7 @@ jobs:
                     password: ${{ secrets.DOCKER_PASSWORD }}
             
             -
-                run: docker compose up -d --build --force-recreate --no-deps
+                run: docker compose down
+
+            -
+                run: docker compose up -d --build
