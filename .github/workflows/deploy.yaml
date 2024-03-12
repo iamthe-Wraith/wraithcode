@@ -7,7 +7,6 @@ on:
 jobs:
     deploy:
         runs-on: self-hosted
-
         steps:
             -
                 name: Check out the repo
@@ -21,7 +20,14 @@ jobs:
                     password: ${{ secrets.DOCKER_PASSWORD }}
             
             -
+                name: Set environment variables
+                run: |
+                    rm -rf .env
+                    echo "PUBLIC_TEST_SECRET=${{ secrets.PUBLIC_TEST_SECRET }}" >> .env
+                    echo "PUBLIC_APP_ENV=${{ secrets.PUBLIC_APP_ENV }}" >> .env
+
+            -
                 run: docker compose down --rmi all --volumes --remove-orphans
 
             -
-                run: docker compose up -d --build
+                run: docker compose up -d

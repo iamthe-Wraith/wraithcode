@@ -1,5 +1,5 @@
 services:
   app:
-    image: iamthewraith/wraithcode
+    image: iamthewraith/wraithcode:latest
     ports:
       - "3000:3000"

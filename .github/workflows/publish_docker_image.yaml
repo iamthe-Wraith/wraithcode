@@ -9,8 +9,6 @@ jobs:
     docker:
         name: Push Docker image to Docker Hub
         runs-on: ubuntu-latest
-        env: 
-            PUBLIC_TEST_SECRET: ${{secrets.PUBLIC_TEST_SECRET}}
         steps:
             -
                 name: Check out the repo
@@ -22,13 +20,23 @@ jobs:
                 with:
                     username: ${{ secrets.DOCKER_USERNAME }}
                     password: ${{ secrets.DOCKER_PASSWORD }}
-    
-            - 
-                name: Build and push Docker image
-                uses: docker/build-push-action@v5
-                with:
-                    push: true
-                    tags: iamthewraith/wraithcode:latest
+
+            -
+                name: Set environment variables
+                run: |
+                    rm -rf .env
+                    echo "PUBLIC_TEST_SECRET=${{ secrets.PUBLIC_TEST_SECRET }}" >> .env
+                    echo "PUBLIC_APP_ENV=${{ secrets.PUBLIC_APP_ENV }}" >> .env
+
+            -
+                name: Build docker image
+                run: |
+                    docker build . -t iamthewraith/wraithcode:latest
+            
+            -
+                name: Push docker image
+                run: |
+                    docker push iamthewraith/wraithcode:latest
 
     trigger-deploy:
         permissions: write-all
