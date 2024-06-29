@@ -2,4 +2,4 @@ services:
   app:
     image: iamthewraith/wraithcode:latest
     ports:
-      - "3000:3000"
+      - "3002:3000"

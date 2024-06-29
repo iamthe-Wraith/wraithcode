@@ -1,7 +1,19 @@
-<script lang=ts>
-	import { PUBLIC_APP_ENV } from "$env/static/public";
-</script>
+<section class="intro">
+	<h1>Welcome to Wraithcode</h1>
+	<p>Big things are in the works...come back soon!</p>
+</section>
 
-<h1>Welcome to Wraithcode</h1>
-<p>Things are in the works...come back soon to see what we are able to accomplish!</p>
-<p>test: 5</p>
+<style>
+	section {
+		padding: 1rem;
+	}
+
+	.intro {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		height: 80vh;
+	}
+</style>

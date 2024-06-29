@@ -1,0 +1,287 @@
+@font-face {
+	font-family: 'NightmareBeforeChristmas';
+	src: url('/fonts/NightmareBeforeChristmas.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Balsamiq';
+	src: url('/fonts/BalsamiqSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Balsamiq';
+	src: url('/fonts/BalsamiqSans-Italic.ttf') format('truetype');
+	font-style: italic;
+}	
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--neutral-100);
+	box-sizing: border-box;
+}
+
+body {
+	--neutral-100: #0f0f0f;
+	--neutral-200: #212121;
+	--neutral-300: #393939;
+	--neutral-400: #525252;
+	--neutral-500: #767676;
+	--neutral-600: #9f9f9f;
+	--neutral-700: #c8c8c8;
+	--neutral-800: #dedede;
+	--neutral-900: #f1f1f1;
+
+	--primary-100: #a36208;
+	--primary-200: #bc720b;
+	--primary-300: #d38210;
+	--primary-400: #e8931e;
+	--primary-500: #fba734;
+	--primary-600: #f9b657;
+	--primary-700: #f9c275;
+	--primary-800: #f7ca8a;
+	--primary-900: #f9d6a4;
+
+	--accent1-100: #2b3a1f;
+	--accent1-200: #3d542b;
+	--accent1-300: #4c6b35;
+	--accent1-400: #5d843f;
+	--accent1-500: #6a9b44;
+	--accent1-600: #79b24e;
+	--accent1-700: #88c956;
+	--accent1-800: #96dd5f;
+	--accent1-900: #a4f268;
+
+	--accent2-100: #1e1b28;
+	--accent2-200: #2e293f;
+	--accent2-300: #3e3856;
+	--accent2-400: #4d456b;
+	--accent2-500: #5e5482;
+	--accent2-600: #70659b;
+	--accent2-700: #8174b2;
+	--accent2-800: #9282c9;
+	--accent2-900: #a493e2;
+
+	--danger-100: #3f1715;
+	--danger-200: #541c18;
+	--danger-300: #6d201b;
+	--danger-400: #87221b;
+	--danger-500: #9e2017;
+	--danger-600: #b22d23;
+	--danger-700: #c4392f;
+	--danger-800: #d8453a;
+	--danger-900: #f25a4f;
+
+	--success-100: #1a303f;
+	--success-200: #1f3f56;
+	--success-300: #234d6b;
+	--success-400: #265d84;
+	--success-500: #296c9b;
+	--success-600: #357bad;
+	--success-700: #448fc4;
+	--success-800: #55a3db;
+	--success-900: #68b8f2;
+
+	--header-font: NightmareBeforeChristmas, sans-serif;
+	--body-font: "Balsamiq", sans-serif;
+
+	--outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+input,
+label,
+button,
+a,
+li,
+ul,
+ol,
+textarea,
+select,
+option,
+form,
+section,
+header,
+footer,
+main,
+nav {
+	color: var(--neutral-900);
+}
+
+body * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--body-font);
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	line-height: 1.7rem;
+	transition: color 0.15s ease-in-out,
+				background-color 0.15s ease-in-out,
+				border-color 0.15s ease-in-out,
+				opacity 0.15s ease-in-out;
+
+	@media (min-width: 768px) {
+		font-size: 1rem;
+		line-height: 1.9rem;
+	}
+}
+
+a,
+button,
+input,
+textarea,
+select {
+	outline: none;
+
+	&:focus-visible {
+		outline: 1px dashed var(--neutral-700);
+		outline-offset: calc(var(--outline-offset) - 1px);
+	}
+}
+
+label:has(input:focus-visible) {
+	outline: 1px dashed var(--neutral-700);
+	outline-offset: calc(var(--outline-offset) - 1px);
+}
+
+input,
+textarea {
+	font-size: 1rem;
+
+	@media (min-width: 768px) {
+		font-size: 0.875rem;
+	}
+}
+
+p:not(:last-child) {
+	margin-bottom: 1rem;
+}
+
+h1,
+h1 *,
+.h1,
+h2,
+h2 *,
+.h2,
+h3,
+h3 *,
+.h3,
+h4,
+h4 *,
+.h4,
+h5,
+h5 *,
+.h5,
+h6,
+h6 *,
+.h6 {
+	margin-bottom: 1.2rem;
+	font-family: var(--header-font);
+	font-weight: 100;
+	color: var(--primary-500);
+	letter-spacing: 0.05rem;
+	text-align: center;
+}
+
+.primary-font,
+.primary-font * {
+	font-family: var(--header-font);
+	letter-spacing: 0.05rem;
+}
+
+h1,
+h1 *,
+.h1 {
+	font-size: 2.2rem;
+	line-height: 2.5rem;
+
+	@media (min-width: 768px) {
+		font-size: 3rem;
+		line-height: 4.2rem;
+	}
+}
+
+h2,
+h2 *,
+.h2 {
+	font-size: 2rem;
+	line-height: 2.4rem;
+	
+	@media (min-width: 768px) {
+		font-size: 2.7rem;
+		line-height: 3.7rem;
+	}
+}
+
+h3,
+h3 *,
+.h3 {
+	font-size: 1.8rem;
+	line-height: 2rem;
+
+	@media (min-width: 768px) {
+		font-size: 2.5rem;
+		line-height: 3.5rem;
+	}
+}
+
+h4,
+h4 *,
+.h4 {
+	font-size: 1.6rem;
+	line-height: 2rem;
+
+	@media (min-width: 768px) {
+		font-size: 2.2rem;
+		line-height: 3.2rem;
+	}
+}
+
+h5,
+h5 *,
+.h5 {
+	font-size: 1.3rem;
+	line-height: 1.75rem;
+
+	@media (min-width: 768px) {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+}
+
+h6,
+h6 *,
+.h6 {
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+
+	@media (min-width: 768px) {
+		font-size: 1.8rem;
+		line-height: 2.8rem;
+	}
+}
+
+p {
+	margin-bottom: 0.5rem;
+}
+
+/* helper classes */
+.error {
+	color: var(--danger-500);
+	font-size: 0.75rem;
+	text-indent: 0;
+}
+
+.hidden {
+	display: none !important;
+}
