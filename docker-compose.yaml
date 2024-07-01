@@ -1,5 +1,7 @@
 services:
   app:
     image: iamthewraith/wraithcode:latest
+    restart: always
+    container_name: wraithcode
     ports:
       - "3002:3000"
