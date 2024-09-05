@@ -3,10 +3,103 @@
 
     let details: HTMLDetailsElement;
 
+    // https://css-tricks.com/how-to-animate-the-details-element/
+    class Accordion {
+        private el: HTMLDetailsElement;
+        private summary: HTMLElement;
+        private content: HTMLElement;
+        private animation: Animation | null;
+        private isClosing: boolean;
+        private isExpanding: boolean;
+
+        constructor(el: HTMLDetailsElement) {
+            this.el = el;
+            this.summary = el.querySelector('summary')!;
+            this.content = el.querySelector('.content')!;
+
+            this.animation = null;
+            this.isClosing = false;
+            this.isExpanding = false;
+            this.summary.addEventListener('click', this.onClick);
+        }
+
+        onClick = (e: MouseEvent) => {
+            e.preventDefault();
+
+            this.el.style.overflow = 'hidden';
+            
+            if (this.isClosing || !this.el.open) {
+                this.open();
+            } else if (this.isExpanding || this.el.open) {
+                this.shrink();
+            }
+        }
+
+        shrink = () => {
+            this.isClosing = true;
+            
+            const startHeight = `${this.el.offsetHeight}px`;
+            const endHeight = `${this.summary.offsetHeight}px`;
+            
+            if (this.animation) {
+                this.animation.cancel();
+            }
+            
+            this.animation = this.el.animate(
+                {
+                    height: [startHeight, endHeight]
+                }, 
+                {
+                    duration: 300,
+                    easing: 'ease-in-out'
+                }
+            );
+            
+            this.animation.onfinish = () => this.onAnimationFinish(false);
+            this.animation.oncancel = () => this.isClosing = false;
+        }
+
+        open = () => {
+            this.el.style.height = `${this.el.offsetHeight}px`;
+            this.el.open = true;
+            window.requestAnimationFrame(this.expand);
+        }
+
+        expand = () => {
+            this.isExpanding = true;
+
+            const startHeight = `${this.el.offsetHeight}px`;
+            const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+            
+            if (this.animation) {
+                this.animation.cancel();
+            }
+            
+            this.animation = this.el.animate(
+                {
+                    height: [startHeight, endHeight]
+                }, 
+                {
+                    duration: 400,
+                    easing: 'ease-out'
+                }
+            );
+
+            this.animation.onfinish = () => this.onAnimationFinish(true);
+            this.animation.oncancel = () => this.isExpanding = false;
+        }
+
+        onAnimationFinish = (open: boolean) => {
+            this.el.open = open;
+            this.animation = null;
+            this.isClosing = false;
+            this.isExpanding = false;
+            this.el.style.height = this.el.style.overflow = '';
+        }
+    }
+
     onMount(() => {
-        details.addEventListener("toggle", () => {
-            details.open ? details.setAttribute("open", "") : details.removeAttribute("open");
-        });
+        new Accordion(details);
     });
 </script>
 
@@ -22,10 +115,12 @@
             </span>
         </summary>
         
-        Did you know that HTML includes a <code>&lt;details&gt;</code> element that can be used to create an interactive accordion menu?!
-        The <code>&lt;details&gt;</code> element represents a disclosure widget from which the user can obtain additional information or
-        controls. By default, the widget is closed. When the widget is open, the user can interact with the contents of the
-        <code>&lt;details&gt;</code> element.
+        <div class="content">
+            Did you know that HTML includes a <code>&lt;details&gt;</code> element that can be used to create an interactive accordion menu?!
+            The <code>&lt;details&gt;</code> element represents a disclosure widget from which the user can obtain additional information or
+            controls. By default, the widget is closed. When the widget is open, the user can interact with the contents of the
+            <code>&lt;details&gt;</code> element.
+        </div>
     </details>
 </div>
 
@@ -40,7 +135,6 @@
     details {
         border: 1px solid #ddd;
         border-radius: 4px;
-        padding: 0.5rem 1rem;
         font-weight: 400;
         cursor: pointer;
 
@@ -64,12 +158,17 @@
     }
 
     summary {
+        padding: 0.5rem 1rem;
         color: var(--primary-500);
 
         & span {
             padding-left: 0.5rem;
             color: var(--primary-500);
         }
+    }
+
+    .content {
+        padding: 0.5rem 1rem;
     }
 
     code {
