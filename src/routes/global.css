@@ -124,7 +124,7 @@ body * {
 	font-family: var(--body-font);
 	font-size: 0.9rem;
 	letter-spacing: 0.05rem;
-	line-height: 1.7rem;
+	line-height: 1.5rem;
 	transition: color 0.15s ease-in-out,
 				background-color 0.15s ease-in-out,
 				border-color 0.15s ease-in-out,
@@ -132,7 +132,7 @@ body * {
 
 	@media (min-width: 768px) {
 		font-size: 1rem;
-		line-height: 1.9rem;
+		line-height: 1.7rem;
 	}
 }
 
@@ -140,7 +140,9 @@ a,
 button,
 input,
 textarea,
-select {
+select,
+details,
+summary {
 	outline: none;
 
 	&:focus-visible {
