@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
+import { onMount } from "svelte";
 
     let details: HTMLDetailsElement;
 
@@ -102,6 +103,14 @@
         new Accordion(details);
     });
 </script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="https://github.com/iamthe-Wraith/wraithcode/blob/transformerjs/src/routes/(the-lab)/the-lab/experiments/html/details/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
 
 <div class="container">
     <details bind:this={details}>

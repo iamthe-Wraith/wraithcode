@@ -3,6 +3,7 @@
 	import type { PageData } from "./$types";
     import { assets as assetsPath } from '$app/paths';
 	import type { IBlogPost } from "$lib/services/blog";
+	import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
 
     export let data: PageData;
     
@@ -25,6 +26,14 @@
         featuredArticles = await res.json();
     }
 </script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="https://github.com/iamthe-Wraith/wraithcode/blob/transformerjs/src/routes/(the-lab)/the-lab/experiments/dev-to-api/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
 
 <div class="experiment-container">
     <h1>Let's Play with the DEV API</h1>

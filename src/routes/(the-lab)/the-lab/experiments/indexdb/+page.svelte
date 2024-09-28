@@ -5,6 +5,7 @@
 	import Button from "$lib/components/Button.svelte";
 	import TextInput from "$lib/components/TextInput.svelte";
 	import Textarea from "$lib/components/Textarea.svelte";
+	import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
 
     interface IActivityLog {
         message: string;
@@ -144,6 +145,14 @@
         };
     };
 </script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="https://github.com/iamthe-Wraith/wraithcode/blob/transformerjs/src/routes/(the-lab)/the-lab/experiments/indexdb/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
 
 <div class="experiment-container">
     <h1>IndexDB</h1>
