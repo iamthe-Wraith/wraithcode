@@ -1,3 +1,4 @@
+import { EXPERIMENTS_GITHUB_URL } from "$lib/constants/url";
 import type { PageServerLoad } from "./$types";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -5,8 +6,20 @@ import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
 export const load: PageServerLoad = async () => {
-	const experimentsDirPrefix = 'https://github.com/iamthe-Wraith/wraithcode/blob/c27a39df2cc0cdae034919aee673117d2ea08565/src/routes/(the-lab)/the-lab/experiments';
     const experiments = [
+		{
+			name: 'Working with the IndexedDB API',
+			route: '/the-lab/experiments/indexdb',
+			timestamp: dayjs('Fri Sep 28 2024 00:25:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+			description: 'A small experiment to work with the IndexedDB API and learn how to use it.',
+			links: [
+				{
+					text: 'View on Github',
+					url: `${EXPERIMENTS_GITHUB_URL}/indexdb`,
+					icon: 'fa-brands fa-github'
+				}
+			]
+		},
 		{
 			name: 'Styling and animating the <details> element',
 			route: '/the-lab/experiments/html/details',
@@ -15,7 +28,7 @@ export const load: PageServerLoad = async () => {
 			links: [
 				{
 					text: 'View on Github',
-					url: `${experimentsDirPrefix}/html/details`,
+					url: `${EXPERIMENTS_GITHUB_URL}/html/details`,
 					icon: 'fa-brands fa-github'
 				}
 			]
@@ -28,7 +41,7 @@ export const load: PageServerLoad = async () => {
 			links: [
 				{
 					text: 'View on Github',
-					url: `${experimentsDirPrefix}/dev-to-api`,
+					url: `${EXPERIMENTS_GITHUB_URL}/dev-to-api`,
 					icon: 'fa-brands fa-github'
 				}
 			]
