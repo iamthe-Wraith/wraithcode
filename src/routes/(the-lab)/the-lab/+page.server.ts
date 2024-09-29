@@ -8,6 +8,19 @@ dayjs.extend(utc);
 export const load: PageServerLoad = async () => {
     const experiments = [
 		{
+			name: 'Using the Notifications API',
+			route: '/the-lab/experiments/notifications-api',
+			timestamp: dayjs('Sat Sep 29 2024 10:53:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+			description: 'A barebones example of using the Notifications API to display notifications.',
+			links: [
+				{
+					text: 'View on Github',
+					url: `${EXPERIMENTS_GITHUB_URL}/notifications-api`,
+					icon: 'fa-brands fa-github'
+				}
+			]
+		},
+		{
 			name: 'Working with the IndexedDB API',
 			route: '/the-lab/experiments/indexdb',
 			timestamp: dayjs('Fri Sep 28 2024 00:25:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
