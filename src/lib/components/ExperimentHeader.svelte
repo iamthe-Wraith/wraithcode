@@ -1,6 +1,6 @@
 <div class="experiment-header">
     <div class="left-group">
-        <a href="/the-lab">
+        <a href="/">
             <i class="fa-regular fa-chevron-left"></i>
             Back to The Lab
         </a>
