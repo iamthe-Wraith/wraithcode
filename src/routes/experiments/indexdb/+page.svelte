@@ -3,7 +3,6 @@
     import { enhance } from "$app/forms";
 	import type { SubmitFunction } from "@sveltejs/kit";
 	import Button from "$lib/components/Button.svelte";
-	import TextInput from "$lib/components/TextInput.svelte";
 	import Textarea from "$lib/components/Textarea.svelte";
 	import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
 
@@ -15,7 +14,6 @@
     let db: IDBDatabase | null = null;
     let activityLog: IActivityLog[] = [];
 
-    let input: HTMLInputElement;
     let message = '';
     let error = '';
 
