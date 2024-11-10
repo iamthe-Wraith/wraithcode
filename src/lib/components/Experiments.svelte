@@ -72,7 +72,7 @@
 
 		&:has(a:hover),
 		&:has(a:focus-visible) {
-			border-color: var(--accent2-500);
+			border-color: var(--primary-300);
 		}
 
 		&:not(:last-child) {
@@ -118,8 +118,8 @@
 				justify-content: center;
 				align-items: center;
 				gap: 0.5rem;
-				border: 1px solid var(--accent2-500);
-				background-color: var(--accent2-100);
+				border: 1px solid var(--accent1-500);
+				background-color: var(--accent1-100);
 				padding: 0.25rem 0.5rem;
 				color: var(--neutral-900);
 				text-transform: capitalize;

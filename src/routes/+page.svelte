@@ -21,7 +21,7 @@
 		width: 100%;
 		max-width: 75rem;
 		margin: 0 auto;
-		padding: 2rem 1rem;
+		padding: 3rem 1rem;
 
 		& > header {
 			margin-bottom: 2rem;
@@ -36,7 +36,7 @@
 		width: 100%;
 		max-width: unset;
 		padding: 6rem 2rem;
-		border-bottom: 1px solid var(--accent2-400);
-		background: linear-gradient(0deg, var(--accent2-100), var(--neutral-100));
+		border-bottom: 1px solid var(--primary-100);
+		background: linear-gradient(0deg, var(--neutral-150), var(--neutral-100));
 	}
 </style>
