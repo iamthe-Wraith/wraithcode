@@ -36,7 +36,7 @@
 		width: 100%;
 		max-width: unset;
 		padding: 6rem 2rem;
-		border-bottom: 1px solid var(--primary-100);
+		border-bottom: 1px solid var(--neutral-300);
 		background: linear-gradient(0deg, var(--neutral-150), var(--neutral-100));
 	}
 </style>

@@ -3,6 +3,7 @@
 	import type { IExperiment } from '../../types/experiments';
 	import dayjs from 'dayjs';
 	import Metadata from './Metadata.svelte';
+	import Link from './Link.svelte';
 
 	let experiments: IExperiment[] = [];
 
@@ -48,10 +49,14 @@
 			{#if links?.length}
 				<div class="links">
 					{#each links as { text, url, icon }}
-						<a href={ url } target="_blank">
+						<Link
+							href={ url }
+							target="_blank"
+							kind="neutral"
+						>
 							<i class={ icon }></i>
 							{ text }
-						</a>
+						</Link>
 					{/each}
 				</div>
 			{/if}
@@ -70,8 +75,8 @@
 		border: 1px solid var(--neutral-300);
 		background-color: var(--neutral-150);
 
-		&:has(a:hover),
-		&:has(a:focus-visible) {
+		&:has(> a:hover),
+		&:has(> a:focus-visible) {
 			border-color: var(--primary-300);
 		}
 
@@ -111,27 +116,6 @@
 			flex-wrap: wrap;
 			gap: 0.5rem;
 			padding-top: 1.5rem;
-
-			& a {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				gap: 0.5rem;
-				border: 1px solid var(--accent1-500);
-				background-color: var(--accent1-100);
-				padding: 0.25rem 0.5rem;
-				color: var(--neutral-900);
-				text-transform: capitalize;
-				text-decoration: none;
-				white-space: nowrap;
-
-				&:hover,
-				&:focus-visible {
-					border: 1px solid var(--accent2-600);
-					background-color: var(--accent2-200);
-				}
-			}
 		}
 	}
 </style>

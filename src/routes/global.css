@@ -124,25 +124,25 @@ body {
 	--primary-800: #83ff9c;
 	--primary-900: #a5ffb3;
 
-	--accent1-100: #002776;
-	--accent1-200: #003495;
-	--accent1-300: #0041b8;
-	--accent1-400: #0054e9;
-	--accent1-500: #1270ff;
-	--accent1-600: #3080ff;
-	--accent1-700: #4a90ff;
-	--accent1-800: #619eff;
-	--accent1-900: #7aaeff;
+	--alt1-100: #002776;
+	--alt1-200: #003495;
+	--alt1-300: #0041b8;
+	--alt1-400: #0054e9;
+	--alt1-500: #1270ff;
+	--alt1-600: #3080ff;
+	--alt1-700: #4a90ff;
+	--alt1-800: #619eff;
+	--alt1-900: #7aaeff;
 
-	--accent2-100: #7d3200;
-	--accent2-200: #a04000;
-	--accent2-300: #c04f00;
-	--accent2-400: #e25f00;
-	--accent2-500: #ff7100;
-	--accent2-600: #ff893e;
-	--accent2-700: #ff9f66;
-	--accent2-800: #ffad7e;
-	--accent2-900: #ffbe9a;
+	--alt2-100: #7d3200;
+	--alt2-200: #a04000;
+	--alt2-300: #c04f00;
+	--alt2-400: #e25f00;
+	--alt2-500: #ff7100;
+	--alt2-600: #ff893e;
+	--alt2-700: #ff9f66;
+	--alt2-800: #ffad7e;
+	--alt2-900: #ffbe9a;
 
 	--success-100: #5b0081;
 	--success-200: #7500a5;
