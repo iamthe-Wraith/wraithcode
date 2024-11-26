@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
     import './global.css';
+	import Link from '$lib/components/Link.svelte';
 </script>
 
 <svelte:head>
@@ -8,9 +10,11 @@
 
 <div class="app">
     <header>
-        <a href="/" class="logo">
-            <i class="fa-regular fa-ghost"></i>
-        </a>
+        <div>
+            <a href="/" class="logo">
+                <i class="fa-regular fa-ghost"></i>
+            </a>
+        </div>
     </header>
 
     <main>
@@ -23,12 +27,16 @@
         width: 100vw;
         height: 100vh;
         overflow: auto;
-        background: linear-gradient(180deg, var(--neutral-100), var(--accent2-100));
+        background: var(--neutral-100);
     }
 
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.75rem 1rem;
-        background: var(--neutral-100);
+        border-bottom: 1px solid var(--neutral-300);
+        background: var(--neutral-150);
     }
 
     .logo {
@@ -39,5 +47,9 @@
         & i {
             font-size: 2.25rem;
         }
+    }
+
+    main {
+        width: 100%;
     }
 </style>
