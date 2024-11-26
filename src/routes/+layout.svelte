@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
     import './global.css';
-	import Link from '$lib/components/Link.svelte';
 </script>
 
 <svelte:head>

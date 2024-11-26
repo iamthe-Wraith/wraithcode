@@ -8,6 +8,24 @@ dayjs.extend(utc);
 export class ExperimentsService {
     private _experiments: IExperiment[] = [
         {
+            name: 'Improve Text by Changing the Paint Order',
+            route: '/experiments/paint-order',
+            description: 'Playing around with the paint order of text to see how it changes the rendering and makes the text look different.',
+            links: [
+                {
+                    text: 'View on Github',
+                    url: `${EXPERIMENTS_GITHUB_URL}/paint-order`,
+                    icon: 'fa-brands fa-github'
+                },
+                {
+                    text: 'Documentation',
+                    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order',
+                    icon: 'fa-solid fa-book'
+                }
+            ],
+            createdAt: dayjs('Mon Nov 25 2024 20:34:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+        },
+        {
             name: 'Using the Notifications API',
             route: '/experiments/notifications-api',
             description: 'A bare-bones example of using the Notifications API to display notifications.',
