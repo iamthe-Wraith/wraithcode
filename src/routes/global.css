@@ -258,7 +258,8 @@ label:has(input:focus-visible) {
 }
 
 input,
-textarea {
+textarea,
+select {
 	font-size: 1rem;
 
 	@media (min-width: 768px) {

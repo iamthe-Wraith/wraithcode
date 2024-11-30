@@ -1,24 +1,23 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+    interface IOption {
+        value: string;
+        label: string;
+    }
 
     export let id: string;
     export let name: string;
-    export let value = '';
+    export let value: string|number = '';
     export let label = '';
     export let text = '';
     export let error = '';
-    export let type: HTMLInputElement['type'] = 'text';
     export let required = false;
     export let theme: 'neutral' | 'light' = 'neutral';
+    export let options: IOption[] = [];
 
-    let ref: HTMLInputElement;
-
-	function typeAction(node: HTMLInputElement) {
-		node.type = type || 'text';
-	}
+    let ref: HTMLSelectElement;
 </script>
 
-<div class="input-container">
+<div class="container">
     {#if label}
         <label for={id}>
             {label}
@@ -28,26 +27,26 @@
         </label>
     {/if}
 
-    <input
+    <select
         {id}
         {required}
         {name}
         class="{theme} {error ? 'error' : ''}"
         bind:this={ref}
         bind:value
-        use:typeAction
         {...$$restProps}
         on:change
         on:click
         on:focus
         on:blur
-        on:keydown
-        on:keypress
-        on:keyup
-    />
+    >
+        {#each options as option}
+            <option value={option.value}>{option.label}</option>
+        {/each}
+    </select>
     
     {#if text && !error}
-        <p class="input-text" data-testid={`${id}-text`}>{text}</p>
+        <p class="text" data-testid={`${id}-text`}>{text}</p>
     {/if}
 
     {#if error}
@@ -56,7 +55,7 @@
 </div>
 
 <style>
-    .input-container {
+    .container {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -75,15 +74,15 @@
     p {
         margin: 0;
 
-        &.input-text {
-            color: var(--neutral-900);
-            font-size: 0.8rem;
-            line-height: 1rem;
+        &.text {
+            color: var(--neutral-700);
+            font-size: 0.85rem;
+            line-height: 1.2rem;
             text-align: left;
         }
     }
 
-    input {
+    select {
         width: 100%;
         padding: 0.3rem;
         border-radius: 0.25rem;

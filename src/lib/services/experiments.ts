@@ -8,6 +8,19 @@ dayjs.extend(utc);
 export class ExperimentsService {
     private _experiments: IExperiment[] = [
         {
+            name: 'Having Fun with Loading Animations',
+            route: '/experiments/loading-animations-1',
+            description: 'had some free time, so I thought I\'d play around with loading animation ideas.',
+            links: [
+                {
+                    text: 'View on Github',
+                    url: `${EXPERIMENTS_GITHUB_URL}/loading-animations-1`,
+                    icon: 'fa-brands fa-github'
+                }
+            ],
+            createdAt: dayjs('Fri Nov 29 2024 21:04:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+        },
+        {
             name: 'Improve Text by Changing the Paint Order',
             route: '/experiments/paint-order',
             description: 'Playing around with the paint order of text to see how it changes the rendering and makes the text look different.',
