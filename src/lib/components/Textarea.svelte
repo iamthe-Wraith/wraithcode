@@ -35,7 +35,7 @@
   />
   
   {#if text && !error}
-      <p class="input-text" data-testid={`${id}-text`}>{text}</p>
+      <p class="text" data-testid={`${id}-text`}>{text}</p>
   {/if}
 
   {#if error}
@@ -44,59 +44,60 @@
 </div>
 
 <style>
-  :global(:root) {
-      --textarea-container-flex-grow: 0;
-      --textarea-width: 100%;
-      --textarea-height: 6rem;
-  }
+    :global(:root) {
+        --textarea-container-flex-grow: 0;
+        --textarea-width: 100%;
+        --textarea-height: 6rem;
+    }
 
-  .textarea-container {
-      display: flex;
-      flex-direction: column;
-      flex-grow: var(--textarea-container-flex-grow);
-      gap: 0.5rem;
-      padding: var(--outline-offset);
-  }
+    .textarea-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: var(--textarea-container-flex-grow);
+        gap: 0.5rem;
+        padding: var(--outline-offset);
+    }
 
-  label {
-      font-weight: 500;
+    label {
+        font-weight: 500;
 
-      & span {
-          color: var(--neutral-450);
-      }
-  }
+        & span {
+            color: var(--neutral-450);
+        }
+    }
 
-  p {
-      margin: 0;
+    p {
+        margin: 0;
 
-      &.input-text {
-          color: var(--neutral-450);
-          line-height: 1rem;
-          text-align: left;
-      }
-  }
+        &.text {
+            color: var(--neutral-700);
+            font-size: 0.85rem;
+            line-height: 1.2rem;
+            text-align: left;
+        }
+    }
 
-  textarea {
-      flex-grow: 1;
-      width: var(--textarea-width, 100%);
-      height: var(--textarea-height, 6rem);
-      padding: 0.5rem;
-      border: 1px solid var(--neutral-300);
-      border-radius: 0.25rem;
-      color: var(--neutral-700);
-      background-color: var(--neutral-100);
-      resize: none;
+    textarea {
+        flex-grow: 1;
+        width: var(--textarea-width, 100%);
+        height: var(--textarea-height, 6rem);
+        padding: 0.5rem;
+        border: 1px solid var(--neutral-300);
+        border-radius: 0.25rem;
+        color: var(--neutral-700);
+        background-color: var(--neutral-100);
+        resize: none;
 
-      &::placeholder {
-          color: var(--neutral-400) !important;
-      }
+        &::placeholder {
+            color: var(--neutral-400) !important;
+        }
 
-      &.error {
-          border-color: var(--danger-500);
-      }
+        &.error {
+            border-color: var(--danger-500);
+        }
 
-      &::placeholder {
-          color: var(--neutral-350);
-      }
-  }
+        &::placeholder {
+            color: var(--neutral-350);
+        }
+    }
 </style>

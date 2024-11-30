@@ -11,6 +11,8 @@
 </ExperimentHeader>
 
 <div class="container flex-center">
+    <h1>Paint Order</h1>
+
     <div class="explanation">
         <p>
             We can use the <span>paint-order</span> CSS property to change the order in which the browser paints text onto the page.
