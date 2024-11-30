@@ -130,7 +130,8 @@
     }
 
     .loader-block {
-        --loader-color: var(--primary-500);
+        --loader-color: var(--primary-100);
+        --active-loader-color: var(--primary-600);
 
         position: relative;
         flex-grow: 0;
@@ -140,45 +141,53 @@
         border: 1px solid var(--loader-color);
 
         &.primary {
-            --loader-color: var(--primary-500);
+            --loader-color: var(--primary-100);
+            --active-loader-color: var(--primary-600);
         }
 
         &.alt1 {
-            --loader-color: var(--alt1-500);
+            --loader-color: var(--alt1-100);
+            --active-loader-color: var(--alt1-600);
         }
 
         &.alt2 {
-            --loader-color: var(--alt2-500);
+            --loader-color: var(--alt2-100);
+            --active-loader-color: var(--alt2-600);
         }
 
         &.neutral {
-            --loader-color: var(--neutral-400);
+            --loader-color: var(--neutral-300);
+            --active-loader-color: var(--neutral-600);
         }
 
         &.danger {
-            --loader-color: var(--danger-500);
+            --loader-color: var(--danger-100);
+            --active-loader-color: var(--danger-600);
         }
 
         &.success {
-            --loader-color: var(--success-500);
+            --loader-color: var(--success-100);
+            --active-loader-color: var(--success-600);
         }
 
         &.active {
-            border-color: var(--neutral-900);
+            border-color: var(--active-loader-color);
+            box-shadow: 0 0 12px 1px var(--active-loader-color);
+            z-index: 1;
 
             &.filled {
-                background-color: var(--neutral-900);
+                background-color: var(--active-loader-color);
             }
 
             &.filled-half {
                 &::after {
-                    background-color: var(--neutral-900);
+                    background-color: var(--active-loader-color);
                 }
             }
 
             &.empty-half {
                 &::after {
-                    border-color: var(--neutral-900);
+                    border-color: var(--active-loader-color);
                 }
             }
         }
