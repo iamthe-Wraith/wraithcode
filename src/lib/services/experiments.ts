@@ -8,6 +8,19 @@ dayjs.extend(utc);
 export class ExperimentsService {
     private _experiments: IExperiment[] = [
         {
+            name: 'Lava Bricks',
+            route: '/experiments/lava-bricks',
+            description: 'A simple lava brick effect.',
+            links: [
+                {
+                    text: 'View on Github',
+                    url: `${EXPERIMENTS_GITHUB_URL}/lava-bricks`,
+                    icon: 'fa-brands fa-github'
+                }
+            ],
+            createdAt: dayjs('Sun Mar 02 2025 12:00:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+        },
+        {
             name: 'Having Fun with Loading Animations',
             route: '/experiments/loading-animations-1',
             description: 'had some free time, so I thought I\'d play around with loading animation ideas.',
