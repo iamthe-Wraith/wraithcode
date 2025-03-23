@@ -92,4 +92,15 @@
         padding: 2rem;
         border: 1px solid var(--neutral-300);
     }
+
+    ul.content {
+        height: auto;
+    }
+
+    li {
+        border: 1px solid var(--neutral-300);
+        padding: 0.25rem 0.5rem;
+        margin-bottom: 0.5rem;
+        list-style-position: inside;
+    }
 </style>
