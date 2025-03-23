@@ -8,6 +8,19 @@ dayjs.extend(utc);
 export class ExperimentsService {
     private _experiments: IExperiment[] = [
         {
+            name: 'Orphans',
+            route: '/experiments/orphans',
+            description: 'Learning how to use the CSS orphans property.',
+            links: [
+                {
+                    text: 'View on Github',
+                    url: `${EXPERIMENTS_GITHUB_URL}/orphans`,
+                    icon: 'fa-brands fa-github'
+                }
+            ],
+            createdAt: dayjs('Saturday Mar 22 2025 21:41:01 GMT-0400 (Eastern Daylight Time)').utc().toDate(),
+        },
+        {
             name: 'Gradient Text',
             route: '/experiments/gradient-text',
             description: 'A simple gradient text effect using only CSS.',
