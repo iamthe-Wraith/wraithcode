@@ -1,3 +1,16 @@
+<script>
+    import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
+	import { EXPERIMENTS_GITHUB_URL } from "$lib/constants/url";
+</script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="{EXPERIMENTS_GITHUB_URL}/gradient-text/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
+
 <div class="container">
     <h1>Look at this pretty text!</h1>
 </div>

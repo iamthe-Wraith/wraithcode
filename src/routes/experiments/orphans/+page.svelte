@@ -1,9 +1,19 @@
 <script lang="ts">
-	import Input from "$lib/components/Input.svelte";
+    import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
+    import Input from "$lib/components/Input.svelte";
+    import { EXPERIMENTS_GITHUB_URL } from "$lib/constants/url";
 
     let columns = 4;
     let orphans = 2;
 </script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="{EXPERIMENTS_GITHUB_URL}/orphans/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
 
 <div class="container">
     <div class="controls">
@@ -33,6 +43,30 @@
     
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
     </div>
+
+    <ul class="content" style="columns: {columns ?? 2}; orphans: {orphans ?? 2};">
+        <li>
+            Option 1
+        </li>
+        <li>
+            Option 2
+        </li>
+        <li>
+            Option 3
+        </li>
+        <li>
+            Option 4
+        </li>
+        <li>
+            Option 5
+        </li>
+        <li>
+            Option 6
+        </li>
+        <li>
+            Option 7
+        </li>
+    </ul>
 </div>
 
 <style>

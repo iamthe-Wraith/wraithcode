@@ -1,3 +1,16 @@
+<script>
+	import ExperimentHeader from "$lib/components/ExperimentHeader.svelte";
+	import { EXPERIMENTS_GITHUB_URL } from "$lib/constants/url";
+</script>
+
+<ExperimentHeader>
+    <svelte:fragment slot="right-group">
+        <a href="{EXPERIMENTS_GITHUB_URL}/lava-bricks/%2Bpage.svelte">
+            View on Github
+        </a>
+    </svelte:fragment>
+</ExperimentHeader>
+
 <div class="lava-bricks-container">
     <section class="row row-1">
         <div class="brick brick-1">
